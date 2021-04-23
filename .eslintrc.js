@@ -29,6 +29,6 @@ module.exports = {
         ignores: [],
       },
     ],
-    'prettier/prettier': ['error', { singleQuote: true, endOfLine: 'auto' }],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
 };
