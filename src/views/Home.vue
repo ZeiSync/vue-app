@@ -10,7 +10,7 @@
     }"
   >
     <div id="content" class="max-w-screen-lg text-center">
-      <search-bar @search-submited="search" />
+      <search-bar style="width: 500px" />
     </div>
   </div>
 </template>
@@ -40,24 +40,8 @@ export default defineComponent({
       })
       .catch((error) => {
         // handle error
-        console.error(error);
+        return error;
       });
-  },
-  methods: {
-    search(searchValue: String, page: String = "1") {
-      axios
-        .get(
-          `https://api.unsplash.com/search/users?page=${page}&query=${searchValue}`
-        )
-        .then((response) => {
-          this.photos = response.data;
-        })
-        .catch((error) => {
-          // handle error
-          console.error(error);
-        });
-      console.log(this.photos);
-    },
   },
 });
 </script>
